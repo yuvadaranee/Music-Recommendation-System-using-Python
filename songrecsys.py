@@ -2,10 +2,10 @@
 import pandas as pd
 import numpy as np
 
-import warnings
+import warnings #to warn developers, it dont terminate the program
 import random
 warnings.filterwarnings("ignore", category=FutureWarning)
-from scipy.sparse import csr_matrix
+from scipy.sparse import csr_matrix #mathematical and scientific tasks
 import os
 warnings.simplefilter(action = 'ignore', category=FutureWarning)
 warnings.filterwarnings('ignore')
@@ -32,7 +32,7 @@ print('please enter your deatils below as you are a new user...')
 print(" ")
 time.sleep(3)
 
-
+#dob input
 date_components = input('Enter a date formatted as DD MM YYYY: ').split(' ')
 
 year, month, day = [int(item) for item in date_components]
@@ -58,7 +58,7 @@ print("searching songs for you...")
 user_song_itrx = pd.read_csv('C:/Users/Vincenzo/Desktop/pythonProject/10000.txt',sep='\t', header=None)
 user_song_itrx.columns = ['user_id', 'song_id', 'lstn_count']
 
-#Read song  metadata
+#Read unique song  metadata
 song_data =  pd.read_csv('C:/Users/Vincenzo/Desktop/pythonProject/song_data.csv')
 song_data.drop_duplicates(['song_id'], inplace=True)
 
